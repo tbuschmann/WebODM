@@ -63,7 +63,7 @@ class Map extends React.Component {
             maxZoom: 21,
             minZoom: 0,
             label: 'Google Maps Hybrid'
-        }).addTo(this.map),
+        }),
         "ESRI Satellite": L.tileLayer('//server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', {
             attribution: 'Tiles &copy; Esri &mdash; Source: Esri, i-cubed, USDA, USGS, AEX, GeoEye, Getmapping, Aerogrid, IGN, IGP, UPR-EGP, and the GIS User Community',
             maxZoom: 21,
@@ -75,7 +75,7 @@ class Map extends React.Component {
             maxZoom: 21,
             minZoom: 0,
             label: 'OSM Mapnik'  // optional label used for tooltip
-        })
+        }).addTo(this.map)
       };
     }
 
@@ -131,14 +131,13 @@ class Map extends React.Component {
               }).join("")}
             </ul>
 
-            <button 
+            <button
               onclick="location.href='/3d/project/${task.project}/task/${task.id}/';"
               type="button"
               class="switchModeButton btn btn-sm btn-default btn-white">
               <i class="fa fa-cube"></i> 3D
             </button>
           `);
-          
 
           this.imageryLayers.push(layer);
 
